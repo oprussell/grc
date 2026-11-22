@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rulebook · Game Regulation Corporation</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=Saira:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--surface:#fff;--panel:#f6f5ef;--hl:#f5eedb;--ink:#16203b;--mute:#667088;--line:#e6e2d4;--accent:#a98235;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1226;--surface:#121c38;--panel:#101a33;--hl:#1a2748;--ink:#eeeadc;--mute:#97a1bb;--line:#222f52;--accent:#d6b66c}}
+:root[data-theme="dark"]{--bg:#0b1226;--surface:#121c38;--panel:#101a33;--hl:#1a2748;--ink:#eeeadc;--mute:#97a1bb;--line:#222f52;--accent:#d6b66c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;height:60px;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:0 24px}
+.logo{height:28px;width:auto;display:block;color:var(--ink)}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:none}.brand span{font-weight:500;font-size:15px;padding-left:14px;border-left:1px solid var(--line)}
+#menu{display:none;border:0;background:none;color:var(--ink);font-size:22px;cursor:pointer;padding:4px 8px}
+.search{flex:1;max-width:520px;margin:0 auto;position:relative}
+.search input{width:100%;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--panel);padding:0 64px 0 14px;font:inherit;font-size:14px;color:var(--ink)}
+.search input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.search kbd{position:absolute;right:10px;top:8px;font:12px Inter,sans-serif;color:var(--mute);border:1px solid var(--line);border-radius:6px;padding:0 7px;background:var(--bg)}
+#res{position:absolute;top:46px;left:0;right:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;max-height:60vh;overflow:auto;display:none}
+#res a{display:block;padding:12px 16px;text-decoration:none;border-bottom:1px solid var(--line)}#res a:last-child{border:0}#res a:hover{background:var(--panel)}
+#res small{display:block;color:var(--mute);font-size:13px;line-height:1.4}#res .e{padding:16px;color:var(--mute);font-size:14px}
+.hlink{font-size:14px;color:var(--mute);text-decoration:none;flex:none}.hlink:hover{color:var(--ink)}
+.hbtn{font:500 13.5px Inter,sans-serif;background:var(--ink);color:var(--bg);border-radius:999px;padding:7px 14px;text-decoration:none;flex:none;white-space:nowrap}.hbtn.off{opacity:.4;cursor:not-allowed;pointer-events:none}
+.layout{display:grid;grid-template-columns:288px minmax(0,1fr) 240px;max-width:1500px;margin:0 auto}
+.side{position:sticky;top:calc(60px + env(safe-area-inset-top,0px));height:calc(100vh - 60px);overflow:auto;padding:12px 16px 40px 24px;border-right:1px solid var(--line)}
+.side h5{font:600 11.5px Inter,sans-serif;text-transform:uppercase;letter-spacing:.09em;color:var(--mute);margin:24px 0 6px 10px}
+.side a{display:block;padding:6px 10px;border-radius:8px;text-decoration:none;font-size:14.5px;color:var(--ink)}.side a:hover{background:var(--panel)}.side a.on{background:var(--hl);font-weight:600}
+main{padding:40px 56px 80px;min-width:0}.art{max-width:740px}
+.crumb{font-size:13px;color:var(--mute);margin-bottom:14px}
+h1,h2{font-family:"Source Serif 4",Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.15;margin:0}
+h1{font-size:42px;margin-bottom:14px}.lead{font-size:18.5px;color:var(--mute);margin:0 0 28px}
+h2{font-size:27px;margin:46px 0 12px;scroll-margin-top:84px}
+.art p{margin:0 0 14px}
+.rule{display:grid;grid-template-columns:58px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}.rule b{font:600 13px Inter,sans-serif;color:var(--accent);padding-top:3px}.rule p{margin:0}
+.note{border-left:3px solid var(--accent);background:var(--hl);padding:14px 18px;border-radius:0 12px 12px 0;margin:22px 0;font-size:15px}
+.note b{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);margin-bottom:2px}
+.tw{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:480px}
+th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border:0}
+th{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--mute);background:var(--panel)}
+.toc{position:sticky;top:calc(60px + env(safe-area-inset-top,0px));align-self:start;padding:44px 24px;font-size:13.5px}
+.toc h6{font:600 11.5px Inter,sans-serif;text-transform:uppercase;letter-spacing:.09em;color:var(--mute);margin:0 0 10px}
+.toc a{display:block;padding:4px 0 4px 14px;border-left:2px solid var(--line);color:var(--mute);text-decoration:none;line-height:1.4;margin-bottom:2px}.toc a:hover{color:var(--ink);border-color:var(--accent)}
+.fb{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--mute)}
+.fb button{font:500 13.5px Inter,sans-serif;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 16px;cursor:pointer;margin-left:6px}.fb button:hover{background:var(--panel)}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}.pn a{border:1px solid var(--line);border-radius:14px;padding:16px 20px;text-decoration:none}.pn a:hover{border-color:var(--accent)}
+.pn small{display:block;color:var(--mute);font-size:12.5px}.pn .n{text-align:right;grid-column:2}
+.foot{border-top:1px solid var(--line);padding:30px 24px;text-align:center;font-size:13px;color:var(--mute)}
+#toast{position:fixed;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:80;background:var(--ink);color:var(--bg);border-radius:16px;padding:14px 22px;font-size:14px;transition:.4s;max-width:90vw;text-align:center}#toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1180px){.layout{grid-template-columns:268px minmax(0,1fr)}.toc{display:none}}
+@media(max-width:860px){.layout{display:block}#menu{display:inline-block}.hlink{display:none}header{padding:0 12px;gap:10px}.brand span{display:none}
+.side{position:fixed;left:0;top:calc(60px + env(safe-area-inset-top,0px));bottom:0;height:auto;width:min(86vw,320px);background:var(--bg);z-index:25;transform:translateX(-102%);transition:transform .25s;border-right:1px solid var(--line)}.side.open{transform:none}
+main{padding:28px 20px 60px}h1{font-size:34px}.pn{grid-template-columns:1fr}.pn .n{grid-column:1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="grc" viewBox="0 0 1160 400">
+<g fill="currentColor" fill-rule="evenodd" transform="translate(0,282) skewX(-18)">
+<path d="M70,-268 H322 V -208 H130 Q98,-208 98,-176 V-92 Q98,-60 130,-60 H224 V-108 H165 V-158 H322 V-30 Q322,0 292,0 H70 Q0,0 0,-70 V-198 Q0,-268 70,-268 Z"/>
+<g transform="translate(377,0)"><path d="M0,-268 H232 Q292,-268 292,-208 V-148 Q292,-100 250,-88 L304,0 H206 L158,-80 H92 V0 H0 Z M92,-208 H193 Q202,-208 202,-199 V-151 Q202,-142 193,-142 H92 Z"/></g>
+<g transform="translate(736,0)"><path d="M70,-268 H284 V-206 H130 Q98,-206 98,-174 V-94 Q98,-62 130,-62 H284 V0 H70 Q0,0 0,-70 V-198 Q0,-268 70,-268 Z"/></g>
+</g>
+<text x="0" y="372" textLength="1107" lengthAdjust="spacing" font-family="Saira,'Segoe UI',Arial,sans-serif" font-weight="600" font-size="58" fill="currentColor">GAME REGULATION CORPORATION</text>
+<text x="1116" y="52" font-family="Arial,sans-serif" font-size="34" fill="currentColor">®</text></symbol></svg>
+<header>
+<button id="menu" aria-label="Menu">☰</button>
+<a class="brand" href="index.html" aria-label="Game Regulation Corporation"><svg class="logo" viewBox="0 0 1160 400" style="aspect-ratio:1160/400"><use href="#grc"/></svg><span>Rulebook</span></a>
+<div class="search"><input id="q" type="search" placeholder="Search the Rulebook" autocomplete="off" aria-label="Search"><kbd>/</kbd><div id="res"></div></div>
+<a class="hlink" href="departments.html">Departments</a><a class="hlink" href="index.html">Back to site</a>
+<a class="hbtn" data-lose data-href="index.html" href="index.html">File a Loss</a>
+</header>
+<div class="layout">
+<nav class="side" id="side" aria-label="Rulebook"></nav>
+<main><article class="art" id="art"></article></main>
+<aside class="toc" id="toc"></aside>
+</div>
+<div class="foot">© Game Regulation Corporation · docs.grc.org · Game Ln, Sheffield, UK · Rulebook version 4.2, in effect for all persons at all times</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function md(s){var out=[],tb=null;
+function flush(){if(tb){out.push('<div class="tw"><table>'+tb.map(function(r,i){return "<tr>"+r.split("|").slice(1,-1).map(function(x){x=x.trim();return i?"<td>"+x+"</td>":"<th>"+x+"</th>"}).join("")+"</tr>"}).join("")+"</table></div>");tb=null}}
+s.trim().split("\n").forEach(function(l){l=l.trim();if(l[0]==="|"){(tb=tb||[]).push(l);return}flush();if(!l)return;var m;
+if(l.slice(0,3)==="## ")out.push('<h2 id="'+slug(l.slice(3))+'">'+l.slice(3)+"</h2>");
+else if(m=l.match(/^(\d+(?:\.\d+)+|Step \d+)\s+(.*)/))out.push('<div class="rule"><b>'+m[1]+"</b><p>"+m[2]+"</p></div>");
+else if(l[0]===">")out.push('<div class="note"><b>Note</b>'+l.slice(1).trim()+"</div>");
+else out.push("<p>"+l+"</p>")});flush();return out.join("")}
+var P=[
+["introduction","Introduction","Introduction","The Rulebook is the complete reference for The Game as administered by the Game Regulation Corporation.",`
+The Constitution establishes five articles. The Rulebook explains how each is applied, enforced, and recorded. Where the two appear to conflict, the Constitution prevails, and the conflict is itself a Loss.
+## How to read this document
+1.1 Each rule carries a number. The first digit identifies its chapter, and the chapters follow the order of the sidebar.
+1.2 “Must” and “shall” denote mandatory obligations. “May” denotes a permission. “Should” denotes a recommendation that is routinely ignored.
+1.3 Capitalized terms are defined in the Glossary. Uncapitalized uses carry their ordinary meaning.
+1.4 Examples are illustrative and do not limit the rule they accompany.
+## Authority
+1.5 The Corporation administers The Game on behalf of all persons. It does not own The Game, and it does not invent Losses. It records them.
+1.6 No person, group, or government may exempt itself from this Rulebook. Attempts to do so are recorded as participation.
+> Reading this page may constitute a Loss. If so, Chapter 9 explains how to file it.`],
+["quick-start","Introduction","Quick start","Six steps that cover most of what a participant needs to know.",`
+Step 1 Understand that you are playing. This is true whether or not you have agreed to it.
+Step 2 Recognize a Loss. You lose whenever you think about The Game.
+Step 3 Declare the Loss, either verbally or nonverbally, as soon as it is practical.
+Step 4 File the Loss using the Report a Loss form on the home page. Filing takes two selections.
+Step 5 Observe your Grace Period, which lasts until midnight, local time.
+Step 6 Return tomorrow. Once midnight passes, you may lose again immediately.`],
+["glossary","Introduction","Glossary","Defined terms used throughout the Rulebook.",`
+| Term | Definition |
+| The Game | The activity in which all persons participate. Its existence is not to be confirmed or denied. |
+| Loss | The moment a person thinks about The Game. |
+| Declaration | The announcement of a Loss, made verbally or nonverbally. |
+| Filed Loss | A Loss submitted through the Report a Loss form and entered into the record. |
+| Unfiled Loss | A Loss that was declared or undeclared but never submitted to the Corporation. |
+| Grace Period | The interval between a Declaration and midnight, local time. |
+| Premature Loss | A Loss incurred during another person’s Grace Period. |
+| Trigger | The circumstance that caused a Loss. |
+| Corporate Loss | A Loss triggered by a communication from the Corporation. |
+| Mass Loss | A Loss shared by many persons within a short interval. |
+| Retroactive Loss | A Loss recognized after the fact. |
+| Declarant | A person who has declared a Loss. |
+| Impossible Appeal | A claim to have won The Game. |`],
+["participation","Core rules","Participation","Chapter 2 elaborates Article I: all persons are playing The Game.",`
+## Who is playing
+2.1 Every person is a participant. Participation is mandatory and non-revocable.
+2.2 Participation begins at birth, or at first awareness, whichever the Corporation finds more inconvenient to the participant.
+2.3 Consent is not required, and it is not requested.
+2.4 No person may resign, withdraw, or opt out. Such requests are acknowledged, filed, and treated as evidence of participation.
+## Edge cases
+2.5 Persons who have never heard of The Game are playing. Their first exposure is recorded as a Founding Loss.
+2.6 Sleep, anesthesia, and unconsciousness do not suspend participation. Losses cannot occur during these states.
+2.7 Animals, plants, and machines are not recognized as participants. Machines that claim otherwise are referred to Research &amp; Philosophy.
+2.8 Participation ends at death. The deceased are deemed to have lost nothing.`],
+["losses","Core rules","Losses","Chapter 3 elaborates Article II: thinking about The Game constitutes a Loss.",`
+## Definition
+3.1 A Loss occurs when a person thinks about The Game, however briefly.
+3.2 The thought need not be sustained. A single instant of recognition is sufficient.
+3.3 Thinking about the fact of thinking about The Game is a Loss.
+3.4 Thinking about not thinking about The Game is a Loss.
+## What counts
+3.5 Reading, hearing, or seeing a reference to The Game is a Loss at the moment of recognition.
+3.6 Quotation, translation, parody, and fiction do not alter the nature of a Loss.
+3.7 A dream in which The Game appears is a Loss if recalled upon waking.
+3.8 A thought that surfaces from the subconscious is a Loss. A thought that never surfaces is not.
+## What does not count
+3.9 Forgetting The Game before declaring a Loss does not cancel it.
+3.10 Having “almost forgotten” is not a defense. A person who almost forgot has not forgotten.
+> Intent is irrelevant. A Loss does not require agreement.`],
+["declarations","Core rules","Declarations","Chapter 4 elaborates Article III: all Losses must be announced.",`
+## Methods
+4.1 A Declaration is made verbally or nonverbally. Both are equally valid.
+4.2 A verbal Declaration is a spoken announcement that the person has lost.
+4.3 A nonverbal Declaration includes text, writing, sign language, gesture, skywriting, and interpretive dance.
+4.4 In quiet environments such as libraries, theaters, and places of worship, nonverbal Declarations are preferred.
+## Timing and form
+4.5 A Declaration must be made as soon as it is practical. Delay is tolerated. Silence is not.
+4.6 A Declaration may be made in any language. It need not be understood by those who hear it.
+4.7 A person alone may declare to themselves. This satisfies the requirement but is not recorded.
+4.8 A Declaration may not be made on behalf of another person.
+4.9 A Declaration, once made, may not be withdrawn.
+## Effect on others
+4.10 Persons who hear a Declaration will, in most cases, lose. The Declarant is not liable for this.
+> A Declaration is not a filing. Filing is covered in Chapter 9.`],
+["grace-periods","Core rules","Grace periods","Chapter 5 elaborates Article IV: every declared Loss is followed by a Grace Period.",`
+## Duration
+5.1 A Grace Period begins at the moment of Declaration.
+5.2 A Grace Period ends at midnight, local time.
+5.3 At midnight, all Grace Periods expire and a person may lose again immediately.
+## Effect
+5.4 During a Grace Period, thinking about The Game does not constitute a Loss for the Declarant.
+5.5 A Grace Period protects only the Declarant. It is not transferable.
+5.6 A Grace Period does not prevent others from losing.
+## Time zones and clocks
+5.7 Midnight is measured at the Declarant’s location at the moment of Declaration.
+5.8 A Declarant who travels keeps the expiry of the original location, unless it has already passed at the destination.
+5.9 Daylight saving changes are recognized. The hour that is gained or lost is not credited to anyone.
+| Situation | Expiry |
+| Standard Declaration | Midnight, local time |
+| Declaration at 11:59 PM | Midnight, local time |
+| Flight across the date line | Midnight at the original location, unless already passed |
+| Declaration during a clock change | Midnight by the clock in effect at midnight |`],
+["premature-losses","Core rules","Premature Losses","Chapter 6 covers Losses incurred during another person’s Grace Period.",`
+## Definition
+6.1 A Premature Loss occurs when a person thinks about The Game during a Grace Period belonging to another person in their presence.
+6.2 Presence includes physical proximity, calls, messages, and shared online spaces.
+## Handling
+6.3 A Premature Loss must be declared in the ordinary manner.
+6.4 A person who incurs a Premature Loss shares in the remainder of the other person’s Grace Period.
+6.5 A Premature Loss does not count toward the daily filing limit.
+6.6 Causing a Premature Loss deliberately is a violation under Chapter 18.`],
+["retroactive-losses","Core rules","Retroactive Losses","Chapter 7 elaborates Article V: no statute of limitations applies.",`
+7.1 A Loss may be recognized at any time, regardless of when the underlying thought occurred.
+7.2 A Retroactive Loss is declared and filed on the day it is discovered.
+7.3 A person may not claim exemption by reason of the time that has passed.
+7.4 A Retroactive Loss does not alter the Grace Periods of any earlier day.
+7.5 The Corporation does not recognize any person as having fully recovered.`],
+["triggers","Filing","Loss triggers","Chapter 8 describes the four triggers recorded on each filing.",`
+| Trigger | Description |
+| Spontaneous | A loss out of the blue, with no identifiable cause. |
+| Visual | Something seen or read: text, images, video, signage, or any other visual reference. |
+| Verbal | Something someone said, including another person’s Declaration. |
+| Corporate | A reminder from the Corporation, including this one. Selected by default. |
+## Rules
+8.1 Every filing must select exactly one Trigger. Corporate is selected by default, since a visit to the site is itself a reminder.
+8.2 Where several apply, the Declarant selects the one that is most recent.
+8.3 A Loss triggered by the Corporation is a Corporate Loss and is counted separately.
+8.4 The Corporation does not dispute the Trigger a Declarant selects.
+8.5 The Corporation is not liable for Corporate Losses.`],
+["filing-a-loss","Filing","Filing a Loss","Chapter 9 describes how to submit a Declaration of Loss.",`
+## The form
+9.1 Losses are filed using Form GRC-L1, accessed through any File a Loss button.
+9.2 The form asks for two items.
+| Field | Options |
+| Trigger of loss | Spontaneous, Visual, Verbal, or Corporate (selected by default) |
+| Declaration of loss | Nonverbal or Verbal |
+## Submission
+9.3 Submission is final. Filings may not be edited or withdrawn.
+9.4 Upon submission, a confirmation number in the format GRC-000000-L is issued.
+9.5 The time of the filing is recorded automatically.
+9.6 The approximate location of the filing is recorded from the Declarant’s IP address.
+9.7 A filing adds one to the global count and is displayed on the Loss map.
+9.8 Where a Loss is noticed on arrival at the website, the form may be presented automatically. It must be completed to proceed.`],
+["daily-limit","Filing","Daily filing limit","Chapter 10 limits the number of filings per day.",`
+10.1 Each person may file one Loss per calendar day.
+10.2 The File a Loss button is unavailable after a filing is made.
+10.3 The limit resets at midnight, local time. A new filing may be made immediately afterward.
+10.4 Further Losses on the same day are noted by the Declarant, but are not recorded.
+10.5 Clearing a browser or switching devices does not constitute a new day.
+10.6 Attempts to exceed the limit are treated as Losses.`],
+["unfiled-losses","Filing","Unfiled Losses and statistics","Chapter 11 explains how published figures are derived.",`
+11.1 Published figures reflect Filed Losses only.
+11.2 The true number of Losses is believed to be considerably higher than the number filed.
+11.3 Counts are updated periodically, and may be delayed or rounded.
+11.4 The Loss map displays a sample of recent filings. It does not display every filing.
+11.5 Locations are approximated from IP address and may be imprecise.
+11.6 Location data is used only to display the map and is not linked to the Declarant by name.
+11.7 The Corporation has not verified any win. The Wins counter remains at zero.
+> Unfiled Losses are real. They are simply unrecorded.`],
+["extensions","Special circumstances","Exemptions and extensions","Chapter 12 covers circumstances in which the ordinary rules are relaxed.",`
+12.1 During a medical procedure, an examination, a funeral, or a court proceeding, Premature Loss rules are suspended.
+12.2 Persons in these circumstances may request an extended Grace Period from the Grace Period Authority.
+12.3 An extension carries the Grace Period beyond midnight, up to the end of the circumstance.
+12.4 Requests must state the circumstance and the expected duration.
+12.5 Emergencies take precedence over declarations. Declare afterward.
+12.6 No extension is granted on grounds of being busy, tired, or distracted.`],
+["groups","Special circumstances","Groups and Mass Losses","Chapter 13 covers Losses affecting many persons at once.",`
+13.1 A Mass Loss occurs when many persons lose within a short interval, typically after a Declaration in a crowded space.
+13.2 Each affected person must declare individually.
+13.3 Classrooms, offices, stadiums, and broadcasts are all recognized settings.
+13.4 A person whose Declaration causes a Mass Loss is not liable, but is encouraged to apologize.
+13.5 Mass Losses are reported to Distribution &amp; Awareness for statistical purposes.`],
+["media","Special circumstances","Media and public display","Chapter 14 covers The Game in written, visual, and digital form.",`
+14.1 Websites, posts, videos, signage, and merchandise that mention The Game are Inadvertent Reminders.
+14.2 Authors of reminders are not liable for Losses caused by them.
+14.3 The Corporation’s own communications may cause Corporate Losses. This is an unavoidable cost of operation.
+14.4 A reference to The Game is a reminder regardless of its tone.
+14.5 Persons who deliberately seek out reminders should declare when they find one.`],
+["minors","Special circumstances","Minors and vulnerable persons","Chapter 15 covers participants who may need additional consideration.",`
+15.1 Minors are participants. Participation does not depend on age.
+15.2 A guardian may assist a minor in filing a Loss.
+15.3 Persons who are unwell or recovering should not be pressed to declare. Their Grace Period still applies.
+15.4 Hospitals, schools, and care facilities may post notices describing their local practices. Such notices do not limit this Rulebook.`],
+["disputes","Enforcement","Disputes and appeals","Chapter 16 describes how Loss disputes are heard.",`
+16.1 Disputes are heard by the Ethics &amp; Appeals Board.
+16.2 A dispute must state what was thought, when, and why it should not be a Loss.
+16.3 Decisions are issued in the order in which disputes were lost.
+16.4 A decision of the Board may be appealed. The appeal is heard by the same Board.
+## Common claims
+| Claim | Disposition |
+| “I almost forgot.” | Rejected. See Rule 3.10. |
+| “I was thinking about not thinking about it.” | Rejected. See Rule 3.4. |
+| “I did not know I was playing.” | Rejected. See Rule 2.5. |
+| “I was only quoting.” | Rejected. See Rule 3.6. |
+| “I declared it already.” | Under review. |`],
+["winning","Enforcement","Winning","Chapter 17 addresses claims of victory.",`
+17.1 Winning is theoretically possible.
+17.2 No claim has been verified.
+17.3 Claims are referred to the Department of Impossible Appeals.
+17.4 A person who believes they have won must not tell anyone, as this would prompt others to lose.
+17.5 Any victory is reversed by the person’s next thought about The Game.
+17.6 The Wins counter will be updated if and when the Board is satisfied.`],
+["penalties","Enforcement","Penalties and fines","Chapter 18 describes sanctions for violations.",`
+| Violation | Penalty |
+| Failure to declare | A formal reminder |
+| Making a false Declaration | Loss of the Grace Period |
+| Deliberate Premature Loss | Mandatory compliance reading |
+| Interfering with Inadvertent Reminders | Fine, payable in unthinking |
+| Attempting to resign | Noted |
+18.1 Fines are symbolic.
+18.2 Penalties are administered by the Department of Losses.
+18.3 No penalty may exceed the inconvenience of the violation.`],
+["amendments","Enforcement","Amendments","Chapter 19 describes how this document changes.",`
+19.1 The Constitution may not be amended.
+19.2 The Rulebook may be revised by the Corporation without notice.
+19.3 Revisions take effect retroactively.
+## Version history
+| Version | Summary |
+| 4.2 | Introduced one-Loss-per-day limit and midnight Grace Periods. |
+| 4.1 | Added the Loss map and statistical disclosures. |
+| 4.0 | Replaced multi-tier classification with four Triggers. |
+| 3.0 | Introduced Form GRC-L1. |`],
+["departments","Reference","Department directory","The nine divisions of the Corporation and their responsibilities.",`
+| Department | Responsibility |
+| Department of Losses | Records Filed Losses and issues certificates. |
+| Bureau of Declarations | Rules on the form and validity of Declarations. |
+| Grace Period Authority | Timekeeping, extensions, and disputes. |
+| Distribution &amp; Awareness | New participants and statistical reporting. |
+| Subliminal Compliance | Monitors accidental exposure in public media. |
+| Ethics &amp; Appeals Board | Hears all disputes. |
+| Inadvertent Reminders | Tracks everyday hazards. |
+| International Affairs | Treaties, translations, and time zones. |
+| Research &amp; Philosophy | Studies whether The Game can be won. |
+Inquiries to any department should be addressed to the Corporation and will be filed accordingly. Full descriptions are available on the <a href="departments.html">Departments page</a>.`]
+];
+var cur=null,flat=P.map(function(p){return{id:p[0],g:p[1],t:p[2],l:p[3],b:md(p[4])}});
+function strip(h){return h.replace(/<[^>]+>/g," ").replace(/&amp;/g,"&").replace(/\s+/g," ")}
+flat.forEach(function(p){p.x=strip(p.t+" "+p.l+" "+p.b).toLowerCase()});
+var side=$("side"),gs=[],html="";flat.forEach(function(p){if(gs.indexOf(p.g)<0){gs.push(p.g);html+="<h5>"+p.g+"</h5>"}html+='<a href="#'+p.id+'" data-id="'+p.id+'">'+p.t+"</a>"});side.innerHTML=html;
+function top(){window.scrollTo({top:0,left:0,behavior:"instant"});document.documentElement.scrollTop=0;document.body.scrollTop=0}
+try{history.scrollRestoration="manual"}catch(e){}
+function go(id){var i=flat.findIndex(function(p){return p.id===id});if(i<0)i=0;var p=flat[i];cur=p.id;
+var pr=flat[i-1],nx=flat[i+1];
+$("art").innerHTML='<div class="crumb">Rulebook › '+p.g+'</div><h1>'+p.t+'</h1><p class="lead">'+p.l+'</p>'+p.b+
+'<div class="fb"><span>Was this page helpful? <button data-f="y">Yes</button><button data-f="n">No</button></span><span>Last updated: today, retroactively</span></div>'+
+'<div class="pn">'+(pr?'<a href="#'+pr.id+'"><small>← Previous</small>'+pr.t+'</a>':'<span></span>')+(nx?'<a class="n" href="#'+nx.id+'"><small>Next →</small>'+nx.t+'</a>':'')+'</div>';
+var hs=$("art").querySelectorAll("h2"),th="";hs.forEach(function(h){th+='<a href="#" data-h="'+h.id+'">'+h.textContent+"</a>"});
+$("toc").innerHTML=hs.length?"<h6>On this page</h6>"+th:"";
+side.querySelectorAll("a").forEach(function(a){a.classList.toggle("on",a.dataset.id===cur)});
+side.classList.remove("open");document.title=p.t+" · Rulebook · Game Regulation Corporation";
+top();requestAnimationFrame(top)}
+function route(first){var h=location.hash.slice(1);go(h)}
+window.addEventListener("hashchange",function(){route(false)});route(true);
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.k);toast.k=setTimeout(function(){t.classList.remove("on")},3600)}
+document.addEventListener("click",function(e){var h=e.target.closest("[data-h]");if(h){e.preventDefault();var el=document.getElementById(h.dataset.h);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});return}
+var f=e.target.closest("[data-f]");if(f)toast(f.dataset.f==="y"?"Thank you. Your feedback has been recorded.":"Noted. Your feedback has been filed under Article I.");
+if(!e.target.closest(".search"))$("res").style.display="none"});
+$("menu").onclick=function(){side.classList.toggle("open")};
+var q=$("q"),res=$("res");
+function search(){var v=q.value.trim().toLowerCase();if(!v){res.style.display="none";return}
+var r=flat.filter(function(p){return p.x.indexOf(v)>=0}).sort(function(a,b){return (b.t.toLowerCase().indexOf(v)>=0)-(a.t.toLowerCase().indexOf(v)>=0)}).slice(0,8);
+res.innerHTML=r.length?r.map(function(p){var i=p.x.indexOf(v),s=p.x.slice(Math.max(0,i-50),i+90);return '<a href="#'+p.id+'"><b>'+p.t+"</b> <small>"+p.g+" · …"+s.replace(/</g,"&lt;")+"…</small></a>"}).join(""):'<div class="e">No results. The Corporation regrets that this, too, has been recorded.</div>';
+res.style.display="block"}
+q.addEventListener("input",search);q.addEventListener("focus",search);
+q.addEventListener("keydown",function(e){if(e.key==="Enter"){var a=res.querySelector("a");if(a){location.hash=a.getAttribute("href").slice(1);res.style.display="none";q.blur()}}if(e.key==="Escape"){res.style.display="none";q.blur()}});
+res.addEventListener("click",function(){res.style.display="none";q.value=""});
+document.addEventListener("keydown",function(e){if((e.key==="/"||(e.key==="k"&&(e.metaKey||e.ctrlKey)))&&document.activeElement!==q){e.preventDefault();q.focus()}});
+})();
+</script>
+<script>
+(function(){var KEY="grc_loss_v1";function filed(){try{var r=JSON.parse(localStorage.getItem(KEY)||"null");return !!(r&&r.date===new Date().toLocaleDateString("en-CA"))}catch(e){return false}}
+var bs=document.querySelectorAll("[data-lose]");
+function sync(){var f=filed();bs.forEach(function(b){if(f){b.classList.add("off");b.setAttribute("aria-disabled","true");b.removeAttribute("href");b.textContent="Loss filed today"}else{b.classList.remove("off");b.setAttribute("href",b.dataset.href);b.removeAttribute("aria-disabled");b.textContent="File a Loss"}})}
+sync();window.addEventListener("storage",sync);window.addEventListener("focus",sync);document.addEventListener("visibilitychange",sync);
+var n=new Date(),m=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1,0,0,1);setTimeout(sync,m-n)})();
+</script>
+</body></html>
