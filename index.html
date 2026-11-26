@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Game Regulation Corporation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Saira:wght@600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#faf9f5" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b1226" media="(prefers-color-scheme: dark)">
+<style>
+:root{--bg:#faf9f5;--surface:#fff;--panel:#f2efe4;--ink:#16203b;--mute:#667088;--line:#e6e2d4;--accent:#a98235;--band:#0e1b3d;--bandink:#f4f1e6;
+color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1226;--surface:#121c38;--panel:#0f1830;--ink:#eeeadc;--mute:#97a1bb;--line:#222f52;--accent:#d6b66c;--band:#16254d}}
+:root[data-theme="dark"]{--bg:#0b1226;--surface:#121c38;--panel:#0f1830;--ink:#eeeadc;--mute:#97a1bb;--line:#222f52;--accent:#d6b66c;--band:#16254d}
+*{box-sizing:border-box}html{background:var(--bg)}body{overflow-x:clip}::selection{background:color-mix(in srgb,var(--accent) 32%,transparent)}:focus-visible{outline:2px solid var(--accent);outline-offset:3px}summary:hover{color:var(--accent)}html{scroll-behavior:smooth;scroll-padding-top:68px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Google Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Arvo,Georgia,serif;font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:0}
+a{color:inherit}.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.eyebrow{font:500 13px "Google Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{height:38px;width:auto;display:block;color:var(--ink)}
+nav{display:flex;gap:28px;font-size:15px;color:var(--mute)}nav a{text-decoration:none}nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:500 15px "Google Sans",sans-serif;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:13px 24px;cursor:pointer;text-decoration:none;transition:transform .2s,opacity .2s}
+.btn:hover{opacity:.88;transform:translateY(-1px)}.btn.sm{padding:9px 18px;font-size:14px}
+.btn:disabled{background:var(--mute);color:var(--bg);opacity:1;cursor:not-allowed;transform:none}.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.link{color:var(--ink);text-decoration:none;font-weight:500;border-bottom:1px solid var(--line);padding-bottom:2px}.link:hover{border-color:var(--accent)}
+.top{min-height:calc(100svh - 73px);display:flex;flex-direction:column}.hero{flex:1;display:flex;align-items:center;padding:36px 0;text-align:left}.hero .wrap{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:44px;align-items:center;width:100%}
+.status{display:inline-flex;align-items:center;gap:10px;font:500 13px "Google Sans",sans-serif;letter-spacing:.06em;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 18px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pl 2.4s ease-in-out infinite}@keyframes pl{50%{opacity:.25}}
+.hero h1{font-size:clamp(34px,4.2vw,58px);margin:22px 0 18px}
+.hero p{font-size:18px;color:var(--mute);max-width:520px;margin:0 0 28px}.hero .acts{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.stats{border-block:1px solid var(--line)}.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:34px 24px;border-left:1px solid var(--line)}.stat:first-child{border:0;padding-left:0}
+.stat .n{font:600 34px "Cascadia Code",ui-monospace,monospace;font-variant-numeric:tabular-nums;letter-spacing:-.03em}.stat .l{font-size:13.5px;color:var(--mute)}
+section{padding:110px 0}.alt{background:var(--panel)}.sec-h{max-width:640px;margin-bottom:56px}.sec-h h2{font-size:clamp(30px,3.8vw,44px);margin-top:14px}
+.sec-h p{color:var(--mute);margin:18px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dept{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:30px;transition:border-color .2s}.dept:hover{border-color:var(--accent)}.dft{display:flex;justify-content:space-between;align-items:center;gap:12px}.loc{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--mute)}.dept .more{font-size:14px;font-weight:500;color:var(--accent)}
+.alt .dept{background:var(--surface)}
+.dept .no{font:500 14px "Cascadia Code",ui-monospace,monospace;color:var(--accent);margin-bottom:40px;display:block}
+.dept h3{font-size:21px;margin-bottom:10px}.dept p{flex:1;margin:0 0 18px;color:var(--mute);font-size:15.5px}
+.const .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px}.const .sec-h{position:sticky;top:110px;align-self:start;margin:0}
+.art{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:28px 0;border-top:1px solid var(--line)}.art:last-child{border-bottom:1px solid var(--line)}
+.art b{white-space:nowrap;font:700 21px Arvo,Georgia,serif;color:var(--accent)}.art p{margin:0}
+.news a{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:baseline;padding:28px 0;border-top:1px solid var(--line);text-decoration:none}
+.news a:last-child{border-bottom:1px solid var(--line)}.news time{font-size:14px;color:var(--mute)}.news h3{font-size:21px}.news span{color:var(--accent);transition:transform .2s}.news a:hover span{transform:translateX(5px)}
+details{border-top:1px solid var(--line);padding:24px 0}details:last-of-type{border-bottom:1px solid var(--line)}
+summary{font:700 20px Arvo,Georgia,serif;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary{position:relative;padding-right:40px}summary::before{content:"";position:absolute;right:2px;top:50%;margin-top:-8px;width:16px;height:16px;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 14 14%27%3E%3Cpath d=%27M7 1v12M1 7h12%27 stroke=%27black%27 stroke-width=%271.7%27 stroke-linecap=%27round%27/%3E%3C/svg%3E") center/16px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 14 14%27%3E%3Cpath d=%27M7 1v12M1 7h12%27 stroke=%27black%27 stroke-width=%271.7%27 stroke-linecap=%27round%27/%3E%3C/svg%3E") center/16px no-repeat}details[open] summary::before{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 14 14%27%3E%3Cpath d=%27M1 7h12%27 stroke=%27black%27 stroke-width=%271.7%27 stroke-linecap=%27round%27/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 14 14%27%3E%3Cpath d=%27M1 7h12%27 stroke=%27black%27 stroke-width=%271.7%27 stroke-linecap=%27round%27/%3E%3C/svg%3E")}
+details p{margin:14px 0 0;color:var(--mute);max-width:680px}
+.band{background:var(--band);color:var(--bandink);text-align:center;border-radius:36px;padding:96px 28px;margin:0 28px}
+.band .logo{height:auto;width:min(560px,82%);margin:0 auto 44px;color:var(--bandink)}
+.band h2{font-size:clamp(30px,4vw,46px);margin-bottom:16px}.band p{color:#b9c0d8;max-width:480px;margin:0 auto 34px}
+.band .btn{background:var(--bandink);color:var(--band)}
+footer{padding:80px 0 48px;font-size:14.5px;color:var(--mute)}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}footer h4{margin:0 0 14px;font:500 13px "Google Sans",sans-serif;color:var(--ink)}
+footer a{display:block;text-decoration:none;padding:4px 0}footer a:hover{color:var(--ink)}
+.fine{font-family:"Cascadia Code",ui-monospace,monospace;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;}
+#toast{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:80;background:var(--ink);color:var(--bg);border-radius:18px;padding:16px 24px;font-size:14.5px;max-width:min(92vw,460px);text-align:center;transition:.4s}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+#ov{position:fixed;inset:0;z-index:60;display:none;align-items:flex-start;justify-content:center;padding:20px;background:rgba(10,16,34,.55);backdrop-filter:blur(8px);overflow:auto}
+#ov.on{display:flex}.modal{width:100%;max-width:580px;margin:auto;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:38px;animation:up .4s ease}
+@keyframes up{from{opacity:0;transform:translateY(14px)}}
+.modal h2{font-size:34px;margin:10px 0 12px}.modal>div>p,.modal p.s{color:var(--mute);margin:0 0 24px}.center{text-align:center}.center .btn{margin-top:6px}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:14px}.f .w{grid-column:1/-1}
+label{display:block;font-size:13px;color:var(--mute);margin-bottom:6px}
+input,select,textarea{width:100%;font:400 15px "Google Sans",sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}textarea{resize:vertical;min-height:72px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--mute);margin:0}.chk input{width:auto;margin-top:4px}
+.acts2{display:flex;gap:12px;justify-content:flex-end;margin-top:22px}
+.cert{border:1px solid var(--accent);border-radius:16px;padding:20px 22px;margin:0 0 22px;font-size:14.5px}.cert div{display:flex;justify-content:space-between;gap:16px;padding:5px 0}.cert span{color:var(--mute)}
+.gl{display:block;font:500 13px "Google Sans",sans-serif;letter-spacing:.04em;color:var(--mute);margin:0 0 10px}.grp{margin-bottom:26px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:16px;padding:15px 18px;border:1.5px solid var(--line);border-radius:16px;cursor:pointer;margin:0;background:var(--bg);transition:border-color .2s,background .2s}
+.opt:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+.opt input{position:absolute;opacity:0;pointer-events:none;width:0;height:0;padding:0;border:0}
+.opt .dot{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--mute);position:relative;transition:border-color .2s}
+.opt .dot::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform .2s}
+.opt input:checked+.dot{border-color:var(--accent)}.opt input:checked+.dot::after{transform:scale(1)}
+.opt:has(input:checked){border-color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--bg))}
+.opt input:focus-visible+.dot{outline:2px solid var(--accent);outline-offset:3px}
+.opt b{display:block;font:500 16px "Google Sans",sans-serif;color:var(--ink);line-height:1.3}.opt em{display:block;font-style:normal;font-size:13.5px;color:var(--mute);line-height:1.4}
+.modal .acts2 .btn:last-child{padding:13px 28px}.modal h2{font-size:28px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.docs{text-align:center}.docs .sec-h{margin:0 auto 32px}
+@media(max-width:900px){.const .wrap{grid-template-columns:1fr;gap:44px}.grid{grid-template-columns:1fr 1fr}.stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0;padding-left:0}footer .cols{grid-template-columns:1fr 1fr}.const .sec-h{position:static}nav{display:none}.news a{grid-template-columns:1fr auto}.news time{grid-column:1/-1}}
+@media(max-width:600px){.grid,.f{grid-template-columns:1fr}.art{grid-template-columns:1fr;gap:6px}section{padding:76px 0}.band{margin:0 14px;border-radius:28px;padding:64px 20px}.modal{padding:26px 20px}}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@media(max-width:900px){.top{min-height:0}.hero{padding:56px 0 40px}.hero .wrap{grid-template-columns:1fr;gap:36px}}
+.ic{width:1em;height:1em;vertical-align:-.14em;flex:none}.more .ic{margin-left:4px}.news .ic{width:20px;height:20px}
+.tm{display:inline-flex;align-items:center;gap:2px;font-family:"Cascadia Code",ui-monospace,monospace;font-variant-numeric:tabular-nums;vertical-align:middle}.tm b{display:inline-block;width:1.45em;height:1.7em;line-height:1.7em;text-align:center;border-radius:7px;background:color-mix(in srgb,currentColor 16%,transparent);font-weight:600;font-size:.86em}.tm .c{display:inline-block;width:.5em;text-align:center;opacity:.7;font-weight:600}.dash{opacity:.6}
+.hr{display:flex;align-items:center;justify-content:center}
+.say{display:flex;align-items:center;gap:16px;padding:16px 18px;border:1.5px solid var(--line);border-radius:16px;background:var(--bg);transition:border-color .2s,background .2s}.say.ok{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,var(--bg))}.say.bad{border-color:#b4533c}
+.mic{flex:none;width:56px;height:56px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);display:grid;place-items:center;cursor:pointer;position:relative}.mic svg{width:26px;height:26px}.mic.on::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--accent);animation:mp 1.4s ease-out infinite}@keyframes mp{from{transform:scale(.85);opacity:.9}to{transform:scale(1.25);opacity:0}}
+.sayt b{display:block;font:600 16px "Google Sans",sans-serif}.sayt span{display:block;font-size:14px;color:var(--mute);line-height:1.4}.typebtn{background:none;border:0;color:var(--ink);font:500 14px "Google Sans",sans-serif;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:12px 0 0}#typeW input{margin-top:12px}.cert b{font-family:"Cascadia Code",ui-monospace,monospace;font-weight:500;font-size:13.5px}
+.cc{user-select:none;-webkit-user-select:none;width:100%;max-width:410px;background:var(--surface);border:1.5px solid var(--ink);border-radius:20px;padding:9px;transform:rotate(1deg)}.cc-in{border:1px solid var(--line);border-radius:13px;padding:24px 24px 20px}
+.cc-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:22px}.cc-org{font:600 12px "Google Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}.cc-no{font:500 12.5px "Cascadia Code",ui-monospace,monospace;color:var(--mute)}
+.cc h3{font:700 26px Arvo,Georgia,serif;margin:0 0 10px;letter-spacing:-.01em}.cc p{font-size:14.5px;color:var(--mute);margin:0 0 18px;line-height:1.55}
+.cc-row{display:grid;grid-template-columns:1fr 1.3fr;gap:16px;padding:16px 0;border-block:1px solid var(--line)}.cc-row small{display:block;font-size:12.5px;color:var(--mute)}.cc-row b{font:500 15px "Google Sans",sans-serif}
+.cc-foot{display:flex;justify-content:space-between;align-items:flex-end;margin-top:22px}.sigb{flex:1;min-width:0;padding-right:16px}.sig{display:block;width:170px;max-width:100%;height:auto;color:var(--ink);margin-bottom:-7px;position:relative}.cc-sig{display:block;border-top:1px solid var(--ink);padding-top:7px;font-size:13px;color:var(--mute)}.seal{flex:none}
+@media(max-width:900px){.cc{transform:none;max-width:420px}}
+.cc{display:flex}.cc-in,.cc-lost{flex:1}.cc:not(.filed) .cc-in{display:none}.cc.filed .cc-lost{display:none}.cc-lost{flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;border:1px solid var(--line);border-radius:13px;padding:24px;min-height:352px;display:flex}.cc.filed .cc-lost{display:none}.cc .cc-lost p{margin:0;font-size:15px;color:var(--mute)}
+.mbtn{display:none;border:0;background:none;color:var(--ink);cursor:pointer;padding:6px;border-radius:8px}.btn{white-space:nowrap}
+@media(max-width:900px){header .wrap{gap:10px}header .btn{margin-left:auto}.mbtn{display:inline-grid}header nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 20px 14px}header.open nav{display:flex}header nav a{padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}header nav a:last-child{border:0}}
+@media(max-width:600px){.wrap{padding:0 18px}header .wrap{height:64px}.logo{height:30px}header .btn.sm{padding:8px 12px;font-size:13px}header .btn .lbl{display:none}header .btn .tm b{width:1.25em;font-size:.8em}
+.hero{padding:36px 0 28px}.hero p{font-size:17px;margin-bottom:24px}.hero .acts{gap:14px 22px}.hero .btn{padding:12px 16px;font-size:14px}.hero .btn .tm b{width:1.25em}
+.status{font-size:13px;padding:7px 14px}
+.stat{padding:20px 14px}.stat:first-child{padding-left:0}.stat .n{font-size:22px}.stat .l{font-size:13px}.stat:nth-child(n+3){border-top:1px solid var(--line)}
+.sec-h{margin-bottom:34px}.dept{padding:24px}.dept .no{margin-bottom:26px}.art{padding:22px 0}.news a{padding:22px 0;gap:6px 16px}.news h3{font-size:18px}
+summary{font-size:17px}details{padding:18px 0}.band h2{font-size:28px}.band .logo{width:92%}
+footer{padding:56px 0 36px}footer .cols{grid-template-columns:1fr 1fr;gap:32px 24px}.fine{flex-direction:column;gap:10px}
+.cc-in{padding:20px 18px 16px}.cc h3{font-size:22px}.cc-row{grid-template-columns:1fr}.cc-top{margin-bottom:14px}.sig{width:140px}
+.modal{padding:24px 18px}.modal h2{font-size:23px}.opt{padding:12px 14px;gap:12px}.say{padding:14px}.mic{width:48px;height:48px}.acts2{flex-wrap:wrap}.acts2 .btn{flex:1;justify-content:center}}
+.band .btn:disabled{background:var(--mute);color:var(--band)}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="grc" viewBox="0 0 1160 400">
+<g fill="currentColor" fill-rule="evenodd" transform="translate(0,282) skewX(-18)">
+<path d="M70,-268 H322 V -208 H130 Q98,-208 98,-176 V-92 Q98,-60 130,-60 H224 V-108 H165 V-158 H322 V-30 Q322,0 292,0 H70 Q0,0 0,-70 V-198 Q0,-268 70,-268 Z"/>
+<g transform="translate(377,0)"><path d="M0,-268 H232 Q292,-268 292,-208 V-148 Q292,-100 250,-88 L304,0 H206 L158,-80 H92 V0 H0 Z M92,-208 H193 Q202,-208 202,-199 V-151 Q202,-142 193,-142 H92 Z"/></g>
+<g transform="translate(736,0)"><path d="M70,-268 H284 V-206 H130 Q98,-206 98,-174 V-94 Q98,-62 130,-62 H284 V0 H70 Q0,0 0,-70 V-198 Q0,-268 70,-268 Z"/></g>
+</g>
+<text x="0" y="372" textLength="1107" lengthAdjust="spacing" font-family="Saira,'Segoe UI',Arial,sans-serif" font-weight="600" font-size="58" fill="currentColor">GAME REGULATION CORPORATION</text>
+<text x="1116" y="52" font-family="Arial,sans-serif" font-size="34" fill="currentColor">®</text></symbol><symbol id="grc-mark" viewBox="0 14 1107 268"><g fill="currentColor" fill-rule="evenodd" transform="translate(0,282) skewX(-18)">
+<path d="M70,-268 H322 V -208 H130 Q98,-208 98,-176 V-92 Q98,-60 130,-60 H224 V-108 H165 V-158 H322 V-30 Q322,0 292,0 H70 Q0,0 0,-70 V-198 Q0,-268 70,-268 Z"/>
+<g transform="translate(377,0)"><path d="M0,-268 H232 Q292,-268 292,-208 V-148 Q292,-100 250,-88 L304,0 H206 L158,-80 H92 V0 H0 Z M92,-208 H193 Q202,-208 202,-199 V-151 Q202,-142 193,-142 H92 Z"/></g>
+<g transform="translate(736,0)"><path d="M70,-268 H284 V-206 H130 Q98,-206 98,-174 V-94 Q98,-62 130,-62 H284 V0 H70 Q0,0 0,-70 V-198 Q0,-268 70,-268 Z"/></g>
+</g>
+</symbol><symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-chev" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M16 16l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol><symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 11.5a6.5 6.5 0 0013 0M12 18v3M8.5 21h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol></svg>
+
+<header><div class="wrap">
+<a href="#top" aria-label="Game Regulation Corporation"><svg class="logo" viewBox="0 0 1160 400" style="aspect-ratio:1160/400"><use href="#grc"/></svg></a>
+<nav><a href="#depts">Departments</a><a href="#rules">Constitution</a><a href="#faq">FAQ</a><a href="people.html">People</a><a href="rulebook.html">Read the rulebook</a></nav>
+<button class="btn sm" data-lose>File a Loss</button>
+<button class="mbtn" aria-label="Menu" aria-expanded="false"><svg class="ic" width="22" height="22" style="width:22px;height:22px"><use href="#i-menu"/></svg></button></div></header>
+
+<main id="top">
+<div class="top">
+<div class="hero"><div class="wrap">
+<div class="hl"><span class="status"><i></i><span id="pill">By reading this, you just lost.</span></span>
+<h1>The Game, administered with <em>care.</em></h1>
+<p>The Game Regulation Corporation manages the rules, grace periods, and worldwide distribution of The Game, fairly and without exception.</p>
+<div class="acts"><button class="btn" data-lose>File a Loss</button><a class="link" href="#rules">Read the Constitution</a></div></div>
+<div class="hr" id="slot"><div class="cc" aria-label="Official Loss Certificate"><div class="cc-lost"><p>By reading this, you just lost.</p><button class="btn" data-lose>File a Loss</button></div><div class="cc-in">
+<div class="cc-top"><span class="cc-org">Game Regulation Corporation</span><span class="cc-no" id="ccNo">No. pending</span></div>
+<h3>Certificate of Loss</h3>
+<p>This certifies that the bearer has lost the game, and is advised to declare it promptly.</p>
+<div class="cc-row"><div><small>Date</small><b id="ccDate"></b></div><div><small>Status</small><b id="ccStat">Awaiting declaration</b></div></div>
+<div class="cc-foot"><div class="sigb"><svg class="sig" viewBox="142 215 290 90" fill="none" aria-hidden="true"><path d="m151.5 256.2c0.832 7.104-4.864 20.86-2.688 23.42 1.6 0.96 4.288-2.816 5.888-5.632 3.84-4.16 6.784-10.18 8.256-15.36 3.008-7.936 8.64-23.81 6.016-26.56-5.952-1.6-7.04 5.12-8.128 8.32-2.752 5.76-5.632 12.1-6.272 16.7 2.304 2.304 6.464 2.048 8.896 0.896 6.144-3.456 11.78-9.408 14.46-12.1-2.56 4.864-4.48 12.61-2.752 13.89 4.544-0.448 11.39-8 14.14-9.92-3.008 3.904-5.696 9.792-2.56 10.94 6.528 1.28 14.4-7.296 16.96-10.11-3.584 4.48-4.032 7.296-0.384 8.448 8.768 2.048 16.58-5.44 15.87-9.408-4.672-1.536-7.04 0.32-7.616 3.328-1.792 5.12-0.832 8.576 3.392 9.024 7.36 0.64 16.26-7.168 19.39-10.18-3.584 4.416-5.44 9.28-4.608 9.984 0.896-1.92 2.56-4.032 4.224-4.544 5.44-3.072 13.57-6.656 15.36-5.248 1.856 2.24-1.856 8.832-0.64 11.14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.59"/><path d="m270.8 236c-0.384 4.992-3.648 11.78-5.376 16.32-4.48 12.99-11.52 33.34-8.768 36.48 2.24 1.088 6.272-3.008 8.96-5.952 4.416-12.67 9.024-30.66 8.256-45.5 3.84-3.136 7.36-8.32 10.43-8.256 4.672-1.216 7.68 3.776 7.808 8.96 0.128 6.848-3.904 10.18-8.576 10.37h-7.744c0.384 10.37 2.24 23.42 7.296 23.81 6.4 0.128 11.97-12.03 14.72-15.36-3.52 6.272-5.12 13.82-1.472 14.4 5.056-1.408 13.76-10.5 15.74-13.57-0.064 6.016 3.584 8.64 7.04 8.512 4.992-1.152 10.75-5.76 13.31-8.768-5.568 0.768-9.856 11.14-7.744 13.82 7.616 2.56 11.07-4.48 9.536-10.94-2.176-3.776-6.912-5.696-7.296-7.808-1.088-3.328 1.088-3.776 2.624-3.2 4.352 1.728 3.968 4.224 2.88 7.552 0.704 4.992 6.208 5.888 10.05 4.096 3.648-2.688 5.76-6.016 4.8-7.36-3.904-2.944-5.44 0.896-4.608 4.672 2.816 5.568 8.832 7.104 8.96 10.94-1.152 5.952-5.632 9.088-7.424 7.04-2.944-4.032 2.816-6.848 5.952-7.296l11.9-5.696" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.59"/><path d="m362.6 262.8c-1.728-7.744-0.256-11.9 4.224-12.54 3.584-0.32 7.232-0.32 7.232 1.984-0.192 5.12-5.824 9.152-10.24 9.856 2.688 5.824 9.472 8.448 12.67 8.256 5.12-1.472 8.064-11.26 11.97-16.19 2.112-3.456 5.44-7.104 5.888-11.52 0.512-8.32 1.408-19.26-1.728-19.33-4.736 0-4.992 9.92-4.864 14.91 0 14.53 0.896 27.2 6.464 28.67 3.136 1.408 5.248 0.32 6.272-2.752 1.536-5.888 5.76-10.3 7.68-14.27 3.456-8.448 8.384-20.48 6.656-23.49-1.792-2.048-5.76-1.664-6.784 0.192-1.856 5.184-0.832 17.92-0.384 24.51 0.64 12.03 2.88 21.82 7.424 21.95 3.264-0.384 6.528-3.712 10.18-2.88" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.59"/></svg><span class="cc-sig">Owen Russell – CEO</span></div><svg class="seal" width="72" height="72" viewBox="0 0 76 76" aria-hidden="true" style="color:var(--surface)"><circle cx="38" cy="38" r="36" fill="var(--accent)"/><circle cx="38" cy="38" r="29" fill="none" stroke="var(--surface)" stroke-width="1.5" stroke-dasharray="2 5" stroke-linecap="round"/><use href="#grc-mark" x="13" y="31" width="50" height="12.1"/></svg></div>
+</div></div></div>
+</div></div>
+
+<div class="stats"><div class="wrap">
+<div class="stat"><div class="n" id="cTotal">0</div><div class="l">Losses recorded today</div></div>
+<div class="stat"><div class="n" id="cMin">0</div><div class="l">Losses this minute</div></div>
+<div class="stat"><div class="n">100%</div><div class="l">Global participation</div></div>
+<div class="stat"><div class="n">0</div><div class="l">Verified wins, under review</div></div>
+
+</div></div>
+</div>
+
+<section id="depts"><div class="wrap">
+<div class="sec-h"><span class="eyebrow">Our departments</span><h2>Every Loss, handled with dignity.</h2><p>Nine divisions work quietly around the clock so that you don’t have to.</p></div>
+<div class="grid">
+<a class="dept" href="departments.html#losses"><span class="no">01</span><h3>Department of Losses</h3><p>Logs every reported Loss and issues Official Loss Certificates, suitable for framing.</p><div class="dft"><span class="more">Learn more <svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span><span class="loc"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor" aria-hidden="true"><path d="M5.5 0C2.5 0 0 2.4 0 5.3 0 9 5.5 13 5.5 13S11 9 11 5.3C11 2.4 8.5 0 5.5 0zm0 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2z"/></svg>Sheffield HQ</span></div></a>
+<a class="dept" href="departments.html#declarations"><span class="no">02</span><h3>Bureau of Declarations</h3><p>Regulates how a Loss may be announced: by voice, text, sign, skywriting, or interpretive dance.</p><div class="dft"><span class="more">Learn more <svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span><span class="loc"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor" aria-hidden="true"><path d="M5.5 0C2.5 0 0 2.4 0 5.3 0 9 5.5 13 5.5 13S11 9 11 5.3C11 2.4 8.5 0 5.5 0zm0 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2z"/></svg>Sheffield HQ</span></div></a>
+<a class="dept" href="departments.html#grace-period"><span class="no">03</span><h3>Grace Period Authority</h3><p>Timekeeping, extensions, and disputes. Requests for permanent grace are carefully reviewed, then denied.</p><div class="dft"><span class="more">Learn more <svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span><span class="loc"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor" aria-hidden="true"><path d="M5.5 0C2.5 0 0 2.4 0 5.3 0 9 5.5 13 5.5 13S11 9 11 5.3C11 2.4 8.5 0 5.5 0zm0 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2z"/></svg>Sheffield HQ</span></div></a>
+<a class="dept" href="departments.html#distribution"><span class="no">04</span><h3>Distribution &amp; Awareness</h3><p>Welcomes new players to The Game. Consent is not a prerequisite, per Article I.</p><div class="dft"><span class="more">Learn more <svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span><span class="loc"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor" aria-hidden="true"><path d="M5.5 0C2.5 0 0 2.4 0 5.3 0 9 5.5 13 5.5 13S11 9 11 5.3C11 2.4 8.5 0 5.5 0zm0 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2z"/></svg>Sheffield HQ</span></div></a>
+<a class="dept" href="departments.html#subliminal"><span class="no">05</span><h3>Subliminal Compliance</h3><p>Monitors accidental exposure through billboards, logos, and everyday media.</p><div class="dft"><span class="more">Learn more <svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span><span class="loc"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor" aria-hidden="true"><path d="M5.5 0C2.5 0 0 2.4 0 5.3 0 9 5.5 13 5.5 13S11 9 11 5.3C11 2.4 8.5 0 5.5 0zm0 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2z"/></svg>Sheffield HQ</span></div></a>
+<a class="dept" href="departments.html#appeals"><span class="no">06</span><h3>Ethics &amp; Appeals Board</h3><p>Hears every dispute, including “I was thinking about not thinking about it.”</p><div class="dft"><span class="more">Learn more <svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span><span class="loc"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor" aria-hidden="true"><path d="M5.5 0C2.5 0 0 2.4 0 5.3 0 9 5.5 13 5.5 13S11 9 11 5.3C11 2.4 8.5 0 5.5 0zm0 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2z"/></svg>Sheffield HQ</span></div></a>
+<a class="dept" href="departments.html#reminders"><span class="no">07</span><h3>Inadvertent Reminders</h3><p>Tracks everyday hazards, from encyclopedia entries to other people’s announcements.</p><div class="dft"><span class="more">Learn more <svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span><span class="loc"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor" aria-hidden="true"><path d="M5.5 0C2.5 0 0 2.4 0 5.3 0 9 5.5 13 5.5 13S11 9 11 5.3C11 2.4 8.5 0 5.5 0zm0 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2z"/></svg>Sheffield HQ</span></div></a>
+<a class="dept" href="departments.html#international"><span class="no">08</span><h3>International Affairs</h3><p>Maintains treaties, translations, and time-zone coordination across all recognized territories.</p><div class="dft"><span class="more">Learn more <svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span><span class="loc"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor" aria-hidden="true"><path d="M5.5 0C2.5 0 0 2.4 0 5.3 0 9 5.5 13 5.5 13S11 9 11 5.3C11 2.4 8.5 0 5.5 0zm0 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2z"/></svg>Sheffield HQ</span></div></a>
+<a class="dept" href="departments.html#research"><span class="no">09</span><h3>Research &amp; Philosophy</h3><p>Studies whether The Game can be won. Official status: under review since inception.</p><div class="dft"><span class="more">Learn more <svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span><span class="loc"><svg width="11" height="13" viewBox="0 0 11 13" fill="currentColor" aria-hidden="true"><path d="M5.5 0C2.5 0 0 2.4 0 5.3 0 9 5.5 13 5.5 13S11 9 11 5.3C11 2.4 8.5 0 5.5 0zm0 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2z"/></svg>Sheffield HQ</span></div></a>
+</div></div></section>
+
+<section class="alt const" id="rules"><div class="wrap">
+<div class="sec-h"><span class="eyebrow">The Constitution</span><h2>Five articles. No amendments.</h2><p>The foundational rules governing every person on Earth, whether or not they have been informed.</p></div>
+<div>
+<div class="art"><b>Article I</b><p>All persons are playing The Game. Participation is mandatory and non-revocable.</p></div>
+<div class="art"><b>Article II</b><p>Thinking about The Game constitutes a Loss.</p></div>
+<div class="art"><b>Article III</b><p>All Losses must be announced. The Declaration Requirement may not be waived.</p></div>
+<div class="art"><b>Article IV</b><p>A Grace Period shall follow each declared Loss and shall expire at midnight, local time. Thinking about The Game during another person’s Grace Period constitutes a Premature Loss.</p></div>
+<div class="art"><b>Article V</b><p>No statute of limitations shall apply. Losses may be incurred retroactively.</p></div>
+</div></div></section>
+
+<section id="faq"><div class="wrap" style="max-width:860px">
+<div class="sec-h"><span class="eyebrow">Frequently asked</span><h2>Questions, answered.</h2></div>
+<details><summary>Who is playing The Game?</summary><p>Every person, per Article I. Participation is mandatory and may not be revoked.</p></details>
+<details><summary>When does my Grace Period end?</summary><p>At midnight, local time. On the following day you may lose again immediately.</p></details>
+<details><summary>Why can I file only one Loss per day?</summary><p>One Loss per person per calendar day is recognized. Further Losses during a Grace Period are noted but not recorded.</p></details>
+<details><summary>Can The Game be won?</summary><p>Winning is theoretically possible. No claim has been verified, and all claims are referred to the Department of Impossible Appeals.</p></details>
+<details><summary>How do I stop playing?</summary><p>Opt-out requests are received, ignored then promptly incinerated, and filed under Article I.</p></details>
+</div></section>
+
+<section class="alt" id="careers"><div class="wrap">
+<div class="sec-h"><span class="eyebrow">Careers</span><h2>Join the Corporation.</h2><p>Open positions at our Sheffield headquarters, and remote.</p></div>
+<div class="news">
+<a href="#careers" data-toast="Applications are not currently open."><time>Operations</time><h3>Reminders Coordinator</h3><span><svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span></a>
+<a href="#careers" data-toast="Applications are not currently open."><time>Bureau of Declarations</time><h3>Senior Declarations Officer</h3><span><svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span></a>
+<a href="#careers" data-toast="Applications are not currently open."><time>Grace Period Authority</time><h3>Grace Period Auditor</h3><span><svg class="ic" width="16" height="16"><use href="#i-arrow"/></svg></span></a>
+</div></div></section>
+
+<section class="docs" id="rulebook"><div class="wrap"><div class="sec-h"><span class="eyebrow">The Rulebook</span><h2>Everything you need to comply.</h2><p>Official guidance, procedures, and reference material for all persons presently playing.</p></div><a class="btn" href="rulebook.html">Read the rulebook</a></div></section>
+<div class="band"><svg class="logo" viewBox="0 0 1160 400" style="aspect-ratio:1160/400"><use href="#grc"/></svg>
+<h2>You’re already losing.</h2><p>Reporting a Loss is free, immediate, and always accepted.</p><button class="btn" data-lose>File a Loss</button></div>
+</main>
+
+<footer><div class="wrap">
+<div class="cols">
+<div style="max-width:300px"><svg class="logo" viewBox="0 0 1160 400" style="aspect-ratio:1160/400;height:34px;margin-bottom:14px"><use href="#grc"/></svg><br>Ludus Semper. Keeping the world playing, fairly.</div>
+<div><h4>Services</h4><a href="#top" data-lose-link>File a Loss</a><a href="#faq">FAQ</a></div>
+<div><h4>Headquarters</h4><span style="display:block;padding:4px 0">Game Ln<br>Sheffield, UK</span></div>
+<div><h4>Company</h4><a href="departments.html">Departments</a><a href="people.html">People</a><a href="#careers">Careers</a><a href="#rules">Constitution</a><a href="rulebook.html">Rulebook</a></div>
+</div>
+<div class="fine"><span>© Game Regulation Corporation</span><span>The GRC is not responsible for any losses incurred while reading this website.</span></div>
+</div></footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<div id="ov" role="dialog" aria-modal="true" aria-labelledby="ovT"><div class="modal">
+<form id="vForm" hidden novalidate>
+<span class="eyebrow">Form GRC-L1 · Declaration of Loss</span>
+<h2 id="ovT">Oh, it seems you just lost.</h2>
+<p class="s">By visiting this site, you have just lost the game.</p>
+<div class="grp"><span class="gl">What caused your loss?</span>
+<div class="opts" role="radiogroup" aria-label="Trigger of loss">
+<label class="opt"><input type="radio" name="trig" value="Spontaneous"><i class="dot"></i><span><b>Spontaneous</b><em>Out of the blue loss</em></span></label>
+<label class="opt"><input type="radio" name="trig" value="Visual"><i class="dot"></i><span><b>Visual</b><em>Something I saw or read</em></span></label>
+<label class="opt"><input type="radio" name="trig" value="Verbal"><i class="dot"></i><span><b>Verbal</b><em>Something someone said</em></span></label>
+<label class="opt"><input type="radio" name="trig" value="Corporate" checked><i class="dot"></i><span><b>Corporate</b><em>A reminder from the Corporation, like this</em></span></label>
+</div></div>
+<div class="grp"><span class="gl">Declare your loss</span>
+<div class="say" id="say"><button type="button" class="mic" id="mic" aria-label="Start speaking"><svg><use href="#i-mic"/></svg></button><div class="sayt"><b id="sayA">Say “I lost the game.”</b><span id="sayB">Tap the microphone and say it out loud.</span></div></div>
+<button type="button" class="typebtn" id="typeT">Can’t speak right now? Type it instead</button>
+<div id="typeW" hidden><input id="typeI" type="text" placeholder="I lost the game" autocomplete="off" aria-label="Type your declaration"></div></div>
+<div class="acts2"><button type="button" class="btn ghost" id="cancel">Cancel</button><button type="submit" class="btn" id="subm" disabled>File my loss</button></div>
+</form>
+<div id="vDone" hidden><span class="eyebrow">Receipt</span><h2>Your loss is on record.</h2><p class="s">Your Grace Period is in effect until midnight.</p>
+<div class="cert"><div><span>Confirmation no.</span><b id="dConf"></b></div><div><span>Trigger</span><b id="dTrig"></b></div><div><span>Declaration</span><b id="dDecl"></b></div><div><span>Recorded</span><b id="dWhen"></b></div></div>
+<div class="acts2" style="margin-top:0"><button class="btn" id="dOk">Done</button></div></div>
+</div></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)},KEY="grc_loss_v1",mem=null;
+function today(){return new Date().toLocaleDateString("en-CA")}
+function load(){try{var v=localStorage.getItem(KEY);if(v)return JSON.parse(v)}catch(e){}return mem}
+function save(o){mem=o;try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+function filed(){var r=load();return !!(r&&r.date===today())}
+var extra=0,lastMin=new Date().getMinutes(),min=Math.floor(new Date().getSeconds()*.55);
+function base(){var n=new Date(),x=(n-new Date(n.getFullYear(),n.getMonth(),n.getDate()))/864e5;return Math.floor(5400000*(x-.6*Math.sin(2*Math.PI*x)/(2*Math.PI)))}
+function fmt(n){return n.toLocaleString("en-US")}
+var start=base(),gain=0;function paint(){$("cTotal").textContent=fmt(start+gain+extra);$("cMin").textContent=fmt(min)}
+function tick(){var m=new Date().getMinutes();if(m!==lastMin){lastMin=m;min=0}min++;gain++;paint();setTimeout(tick,600+Math.random()*2200)}
+(function resetAtMinute(){var n=new Date();setTimeout(function(){lastMin=new Date().getMinutes();min=0;paint();resetAtMinute()},(60-n.getSeconds())*1000-n.getMilliseconds()+40)})();
+paint();setTimeout(tick,900);
+function toast(h){var t=$("toast");t.textContent=h;t.classList.add("on");clearTimeout(toast.k);toast.k=setTimeout(function(){t.classList.remove("on")},4200)}
+var btns=document.querySelectorAll("[data-lose]");
+function tm(){var n=new Date(),m=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1,0,0,0),s=Math.max(0,Math.floor((m-n)/1000)),p=function(x){return (x<10?"0":"")+x},str=p(Math.floor(s/3600))+":"+p(Math.floor(s%3600/60))+":"+p(s%60);return '<span class="lbl">Loss filed today <span class="dash">–</span> </span><span class="tm">'+str.split("").map(function(c){return c===":"?'<span class="c">:</span>':"<b>"+c+"</b>"}).join("")+"</span>"}
+function sync(){var f=filed();btns.forEach(function(b){b.disabled=f;b.innerHTML=f?tm():"File a Loss"});$("pill").textContent=f?"Grace period in effect until midnight":"By reading this, you just lost.";document.querySelector(".cc").classList.toggle("filed",f);var r=load();$("ccNo").textContent=f&&r&&r.conf?"No. "+r.conf:"No. pending";$("ccStat").textContent=f?"Filed":"Awaiting declaration";$("ccDate").textContent=new Date().toLocaleDateString("en-US",{dateStyle:"long"})}
+function midnight(){var n=new Date(),m=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1,0,0,1);setTimeout(function(){sync();midnight()},m-n)}
+sync();midnight();setInterval(function(){if(filed())btns.forEach(function(b){b.innerHTML=tm()})},1000);
+var ov=$("ov"),mode="manual";
+function view(v){["vForm","vDone"].forEach(function(id){$(id).hidden=id!==v});$("cancel").hidden=mode==="auto"}
+function open(v){ov.classList.add("on");document.body.style.overflow="hidden";view(v);setTimeout(function(){var el=ov.querySelector("#"+v+" input,#"+v+" button");if(el)el.focus()},80)}
+function close(){ov.classList.remove("on");document.body.style.overflow=""}
+function prep(){}
+btns.forEach(function(b){b.addEventListener("click",function(){if(filed())return;mode="manual";prep();open("vForm")})});
+document.querySelectorAll("[data-lose-link]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();if(!filed()){mode="manual";prep();open("vForm")}else toast("You have already filed a Loss today.")})});
+$("cancel").onclick=close;
+
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ov.classList.contains("on")&&(mode==="manual"||!$("vDone").hidden))close()});
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition,rec=null,listening=false,declared=null;
+function norm(s){return s.toLowerCase().replace(/[^a-z\s]/g," ").replace(/\s+/g," ").trim()}
+function good(s){return /\blost\b.*\bgame\b/.test(norm(s))}
+function say(st,a,b){var el=$("say");el.classList.toggle("ok",st==="ok");el.classList.toggle("bad",st==="bad");$("sayA").textContent=a;$("sayB").textContent=b}
+function accept(kind,heard){declared=kind;$("subm").disabled=false;say("ok",kind+" game loss confirmed","You may now file your loss.")}
+function reject(a,b){declared=null;$("subm").disabled=true;say("bad",a,b)}
+function showType(a,b){$("typeW").hidden=false;$("typeT").hidden=true;if(a)say("bad",a,b);$("typeI").focus()}
+$("typeT").onclick=function(){showType();say("","Type your declaration","Type “I lost the game.” below.")};
+$("typeI").addEventListener("input",function(){if(good(this.value))accept("Nonverbal",this.value.trim());else{declared=null;$("subm").disabled=true;say("","Type your declaration","Type “I lost the game.” below.")}});
+$("typeI").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();if(declared)$("subm").click()}});
+$("mic").onclick=function(){
+if(!SR){showType("Voice isn’t available in this browser","Type your declaration instead.");return}
+if(listening){try{rec.stop()}catch(x){}return}
+rec=new SR();rec.lang="en-US";rec.interimResults=false;rec.maxAlternatives=4;
+rec.onstart=function(){listening=true;$("mic").classList.add("on");say("","Listening…","Say “I lost the game.”")};
+rec.onresult=function(e){var alts=[];for(var i=0;i<e.results[0].length;i++)alts.push(e.results[0][i].transcript);var hit=alts.filter(good)[0];if(hit)accept("Verbal",hit.trim());else reject("We heard “"+alts[0].trim()+"”","That wasn’t it. Tap the microphone and try again.")};
+rec.onerror=function(e){listening=false;$("mic").classList.remove("on");if(e.error==="not-allowed"||e.error==="service-not-allowed"||e.error==="audio-capture")showType("Microphone unavailable","Type your declaration instead.");else if(e.error==="no-speech")reject("We didn’t hear anything","Tap the microphone and try again.");else if(e.error!=="aborted")reject("Something went wrong","Tap the microphone to try again.")};
+rec.onend=function(){listening=false;$("mic").classList.remove("on")};
+try{rec.start()}catch(err){showType("Microphone unavailable","Type your declaration instead.")}};
+$("vForm").addEventListener("submit",function(e){e.preventDefault();var r=document.querySelector("input[name=trig]:checked");if(!r||!declared)return;
+var c="GRC-"+Math.floor(100000+Math.random()*900000)+"-L",w=new Date().toLocaleString("en-US",{dateStyle:"long",timeStyle:"short"});
+save({date:today(),conf:c});extra++;min++;paint();
+$("dConf").textContent=c;$("dTrig").textContent=r.value;$("dDecl").textContent=declared;$("dWhen").textContent=w;
+view("vDone");sync()});
+$("dOk").onclick=close;
+document.querySelectorAll("[data-toast]").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();toast(el.dataset.toast)})});
+setTimeout(function(){if(!filed()&&!ov.classList.contains("on")){mode="auto";open("vForm")}},3000);
+})();
+</script>
+<script>
+(function(){var b=document.querySelector(".mbtn"),h=document.querySelector("header");if(!b)return;b.addEventListener("click",function(){h.classList.toggle("open");b.setAttribute("aria-expanded",h.classList.contains("open"))});h.querySelectorAll("nav a").forEach(function(a){a.addEventListener("click",function(){h.classList.remove("open")})})})();
+</script>
+</body></html>
